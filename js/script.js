@@ -2,14 +2,34 @@
 
 const menu = document.querySelector('header');
 
+const moveTopo = document.querySelector('.moveTopo');
+moveTopo.addEventListener("click", function(event) {
+    moveTopo.preventDefault;
+    console.log(moveTopo);
+});
+const moveSobre = document.querySelector('.moveSobre');
+moveSobre.addEventListener("click", function(event) {
+    event.preventDefault;
+    console.log(moveSobre);
+});
+const moveContato = document.querySelector('.moveContato');
+moveSobre.addEventListener("click", function(event) {
+    event.preventDefault;
+    console.log(moveSobre);
+});
+
+function clicou() {
+    // event.preventDefault;
+    console.log("Clicou");
+}
+
 function animeScroll() {
 
     const header = document.querySelector('header');
     const inicio = header.children[2].children[0];
 
     const hamburguer = document.querySelector('.hamburguer');
-    const icone = hamburguer.children[0]
-    console.log(icone);
+    const icone = hamburguer.children[0];
 
     /* Muda as cores do menu, background branco e fonte verde (class .header) */
     const aside = document.querySelector('aside');
