@@ -7,6 +7,10 @@ function animeScroll() {
     const header = document.querySelector('header');
     const inicio = header.children[2].children[0];
 
+    const hamburguer = document.querySelector('.hamburguer');
+    const icone = hamburguer.children[0]
+    console.log(icone);
+
     /* Muda as cores do menu, background branco e fonte verde (class .header) */
     const aside = document.querySelector('aside');
     const posicao = aside.getBoundingClientRect();
@@ -15,12 +19,18 @@ function animeScroll() {
         menu.classList.add("header")
         menu.style.transition = '.5s';
 
+        icone.style.color = '#2c8560';
+        icone.style.transition = '.5s';
+
         inicio.style.opacity = '1';
         inicio.style.display = 'block';
         inicio.style.transition = '.9s';
     } else {
         menu.classList.remove("header")
         menu.style.transition = '.5s';
+
+        icone.style.color = '#fff';
+        icone.style.transition = '.5s';
 
         inicio.style.opacity = '0';
         inicio.style.display = 'none';
@@ -33,6 +43,9 @@ function animeScroll() {
     if (posicaoContato.y < 25) {
         menu.classList.remove("header")
         menu.style.transition = '.5s';
+
+        icone.style.color = '#fff';
+        icone.style.transition = '.5s';
     }
 
     const container = document.querySelector('.container');
@@ -79,6 +92,18 @@ function animeScroll() {
     } else {
         span4.style.opacity = '1';
         span4.style.transition = '.5s';
+    }
+
+    const step3 = document.querySelector('.step3');
+    const h1 = step3.children[0].children[0].children[0];
+    const posicaoh1 = h1.getBoundingClientRect();
+
+    if (posicaoh1.y < 45) {
+        h1.style.opacity = '0';
+        h1.style.transition = '.3s';
+    } else {
+        h1.style.opacity = '1';
+        h1.style.transition = '.3s';
     }
 }
 

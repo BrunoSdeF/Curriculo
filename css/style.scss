@@ -34,15 +34,9 @@ $poppins: "Poppins";
     box-sizing: border-box;
 }
 
-
-/*  html */
-
 html {
     scroll-behavior: smooth;
 }
-
-
-/*  body */
 
 body {
     position: sticky;
@@ -54,9 +48,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-
-/*  menu header */
 
 header {
     width: 100vw;
@@ -179,7 +170,7 @@ header {
     }
     .hamburguer {
         // Ícone Hamburguer
-        opacity: 0;
+        z-index: 1;
     }
     ul {
         li:nth-child(1) {
@@ -249,7 +240,7 @@ header {
         padding: 15%;
         background-color: rgba(0, 0, 0, 0.8);
         div {
-            width: 60%;
+            width: 80%;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -262,7 +253,7 @@ header {
                 span {
                     width: 100%;
                     display: block;
-                    font-size: 1.7rem;
+                    font-size: clamp(1.1rem, 1.3rem, 1.7rem);
                     font-family: $poppins;
                     color: #fff;
                     line-height: 50px;
@@ -328,10 +319,10 @@ aside {
                     &:hover span {
                         color: #2c8560dd;
                         opacity: 1;
-                        transition: .5s;
+                        transition: 0.5s;
                     }
                     &:not(:hover) span {
-                        transition: .7s;
+                        transition: 0.7s;
                     }
                 }
                 /*
@@ -382,54 +373,46 @@ aside {
     //buscar projetos
     width: 100vw;
     height: 100vh;
-    margin: 0px 0px 0px;
     background: $green;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
     .container {
-        width: 100%;
+        width: 70%;
         height: 100%;
         display: flex;
-        align-items: center;
-        justify-content: start;
-        padding: 15%;
         div {
-            width: 60%;
+            width: 80%;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            div {
+            transition: 0.5s;
+            span {
                 width: 100%;
-                height: auto;
-                transition: 0.5s;
-                span {
-                    width: 100%;
-                    display: block;
-                    font-size: 1.5rem;
-                    font-family: $poppins;
+                display: block;
+                font-size: clamp(1.3rem, 1.5rem, 1.7rem);
+                font-family: $poppins;
+                color: #fff;
+                line-height: 35px;
+                letter-spacing: 1px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            ul {
+                font-family: $poppins;
+                line-height: 40px;
+                li {
                     color: #fff;
-                    line-height: 40px;
-                    letter-spacing: 1px;
                     font-weight: 600;
-                    margin-bottom: 10px;
-                }
-                ul {
-                    font-family: $poppins;
-                    line-height: 40px;
-                    li {
+                    list-style: inside decimal-leading-zero;
+                    font-size: 1.5em;
+                    letter-spacing: 3px;
+                    a {
                         color: #fff;
-                        font-weight: 600;
-                        list-style: inside decimal-leading-zero;
-                        font-size: 1.5em;
-                        letter-spacing: 3px;
-                        a {
-                            color: #fff;
-                            padding-left: 5px;
-                        }
+                        padding-left: 5px;
                     }
                 }
             }
@@ -454,9 +437,10 @@ aside {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.8);
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding-top: 50px;
+        padding-left: 15%;
         div {
             width: 350px;
             height: auto;
@@ -652,195 +636,16 @@ footer {
     }
 }
 
-
-/*
 @media only screen and (max-width: 1000px) {
-    header {
-        width: 100vw;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 30px;
-        background: transparent;
-        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
-        position: fixed;
-        left: 0;
-        top: 0;
-        font-family: $raleway;
+    .step2 {
         transition: 0.5s;
-        div {
-            width: auto;
-            height: auto;
-            a {
-                color: $green;
-                font-size: 25px;
-                font-family: $raleway;
-            }
-        }
-        ul {
-            width: 450px;
-            height: auto;
-            //margin-right: 100px;
-            display: flex;
-            font-size: 17px;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            li:nth-child(1) {
-                //como funciona?
-                width: 225px;
-                padding-left: 10px;
-                a {
-                    color: $green;
-                    font-size: 19px;
-                    font-family: $raleway;
-                }
-            }
-            li:nth-child(2) {
-                // login
-                width: 120px;
-                height: 30px;
-                text-align: center;
-                line-height: 27px;
-                border: 1px solid $green;
-                border-radius: 1px;
-                a {
-                    color: $green;
-                    font-size: 17px;
-                    font-family: $raleway;
-                }
-                &:hover {
-                    background: $green;
-                    border: 1px solid $green;
-                    cursor: pointer;
-                    transition: 0.5s;
-                    a {
-                        color: #000;
-                        font-weight: 700;
-                    }
-                }
-                &:not(:hover) {
-                    transition: 0.5s;
-                }
-            }
-            li:nth-child(3) {
-                // Cadastrar
-                width: 120px;
-                height: 30px;
-                text-align: center;
-                line-height: 27px;
-                border: 1px solid $green;
-                border-radius: 1px;
-                background: $green;
-                margin-left: 35px;
-                a {
-                    color: #000;
-                    font-size: 17px;
-                    font-family: $raleway;
-                    font-weight: 700;
-                }
-                &:hover {
-                    background: transparent;
-                    border: 1px solid $green;
-                    cursor: pointer;
-                    transition: 0.5s;
-                    a {
-                        color: $green;
-                        font-weight: 500;
-                    }
-                }
-                &:not(:hover) {
-                    transition: 0.5s;
-                }
-            }
-        }
-    }
-    .step1 {
-        //buscar projetos
-        width: 100vw;
-        height: 100vh;
-        margin: 0px 0px 0px;
-        background-image: url(../img/pexels-photo-2330137.jpeg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         .container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: baseline;
-            padding-top: 180px;
-            justify-content: center;
-            font-family: $raleway;
-            background-color: rgba(0, 0, 0, 0.5);
             div {
-                width: 60vw;
-                height: auto;
-                font-size: clamp(2rem, 8.5vw, 3.5rem);
-                letter-spacing: 3px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                width: 90%;
                 transition: 0.5s;
-                p {
-                    width: 900px;
-                    height: 230px;
-                    font-size: clamp(2rem, 8.5vw, 3.5rem);
-                    font-family: $poppins;
-                    line-height: 100px;
-                    color: $green;
-                    text-align: center;
-                    letter-spacing: 1px;
+                span {
+                    font-size: clamp(1.2rem, 1.4rem, 1.6rem);
                     transition: 0.5s;
-                }
-                form {
-                    width: 400px;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-end;
-                    align-items: center;
-                    margin: 25px auto;
-                    border-radius: 2px;
-                    input {
-                        width: 300px;
-                        height: 39px;
-                        padding: 0px 10px;
-                        font-size: clamp(0.5rem, 2.5vw, 0.85rem);
-                        letter-spacing: 0px;
-                        font-family: $raleway;
-                        background-color: transparent;
-                        border: 1px solid $green;
-                        border-radius: 3px;
-                        color: $green;
-                        &::placeholder {
-                            font-size: 12px;
-                            font-family: $poppins;
-                            letter-spacing: 3px;
-                            color: $green;
-                            font-weight: 600;
-                        }
-                    }
-                    label {
-                        width: 50px;
-                        height: 40px;
-                        font-size: 20px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        cursor: pointer;
-                        i {
-                            color: $green;
-                        }
-                    }
-                    input[type="submit"] {
-                        display: none;
-                    }
                 }
             }
         }
@@ -850,11 +655,6 @@ footer {
 @media only screen and (max-width: 768px) {
     header {
         transition: 0.5s;
-        div {
-            a {
-                color: $green;
-            }
-        }
         .hamburguer {
             // Ícone Hamburguer
             opacity: 1;
@@ -864,7 +664,7 @@ footer {
             transition: 0.5s;
             i {
                 font-size: 65px;
-                color: $green;
+                color: #fff;
             }
         }
         ul {
@@ -944,4 +744,3 @@ footer {
         }
     }
 }
-*/
