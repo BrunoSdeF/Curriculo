@@ -21,6 +21,19 @@
     <!-- Descrição do Site para o Google -->
     <meta name="description" content="Site de portfólio em desenvolvimento para divulgação de trabalhos.">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ETQJEGKBX1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ETQJEGKBX1');
+    </script>
+
     <!-- Folha de Estilos CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -84,7 +97,8 @@
         <div class="container">
             <div>
                 <h1>Para Dúvidas</h1>
-                <p><a href="https://api.whatsapp.com/send?phone=53984670455" target="_blank"><i class="fab fa-whatsapp"></i> / (53) 98467 - 0455 </a></p>
+                <p><a href="https://api.whatsapp.com/send?phone=53984670455" target="_blank"><i
+                            class="fab fa-whatsapp"></i> / (53) 98467 - 0455 </a></p>
                 <p><i class="far fa-envelope"></i> / dev.brunosf@gmail.com </p>
                 <form name="meu_form">
                     <div class="form">
@@ -109,7 +123,7 @@
                         <div>
                             <textarea id="textareaid" placeholder="Mensagem: " required></textarea>
                         </div>
-                        <input id="submitid" type="submit" class="enviar" onclick="Enviar();" value=" Enviar " disabled/>
+                        <input id="submitid" type="submit" class="enviar" onclick="Enviar();" value=" Enviar " disabled />
                     </div>
                 </form>
             </div>
