@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Noto+Sans&family=Noto+Sans+JP:wght@100&family=Oswald:wght@200&family=Poppins:wght@100&family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+    <!-- Ícones Fonte Awesome -->
+    <script src="https://kit.fontawesome.com/6e10b7e369.js" crossorigin="anonymous"></script>
+
+    <!-- Ícone da Barra de Endereço -->
+    <link rel="sortcut icon" href="img/1305456.png" type="image/gif" />
+    <!-- <link rel="sortcut icon" href="favicon.ico" type="image/x-icon" /> -->
+
+    <!-- Descrição do Site para o Google -->
+    <meta name="description" content="Site de portfólio em desenvolvimento para divulgação de trabalhos.">
+
+    <!-- Folha de Estilos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Título da Página -->
+    <title>B. Freitas</title>
+</head>
+
+<body>
+    <!-- Página home do site... -->
+    <header>
+        <!-- Header com div.a para logo ou nome do projeto, e ul.li*3 para menu de navegação -->
+        <!-- Espaço para Logo ou nome do projeto -->
+        <div id="logo"><a href="#">B. Freitas</a></div>
+
+        <!-- Ícone Hamburguer -->
+        <p class="hamburguer"><i>&equiv;</i></p>
+
+        <!-- Menu de navegação com ul.li*3 -->
+        <ul>
+            <li><a href="#step1">Inicio</a></li>
+            <li><a href="#aside">Sobre</a></li>
+            <li><a href="#step3">Contato</a></li>
+        </ul>
+    </header>
+
+    <section class="step1" id="step1">
+        <!-- Primeiro 'degrau' do site, breve descrição e nome -->
+        <div class="container">
+            <div>
+                <p> <span>Programador em Desenvolvimento... </span>
+                    <span>Tecnologia em Sistemas para Internet </span>
+                    <span>Graduando, IFSUL - Pelotas. </span>
+                    <span>Bruno Freitas.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <aside class="aside" id="aside">
+        <!-- Descrição de linguagens mais utilizadas por min -->
+        <div class="container">
+            <div>
+                <ul>
+                    <span>Conhecimentos em:</span>
+                    <li>HTML<span>Intermediário</span></li>
+                    <li>CSS <span>Intermediário</span></li>
+                    <li>PHP <span>Básico</span></li>
+                    <li>JS <span>Básico</span></li>
+                    <li>C++ <span>Básico</span></li>
+                </ul>
+            </div>
+            <div>
+                <figure>
+                    <img src="img/11957530358.jpg" alt="Foto minha aqui!">
+                </figure>
+            </div>
+        </div>
+    </aside>
+
+    <section class="step3" id="step3">
+        <div class="container">
+            <div>
+                <h1>Para Dúvidas</h1>
+                <p><a href="https://api.whatsapp.com/send?phone=53984670455" target="_blank"><i class="fab fa-whatsapp"></i> / (53) 98467 - 0455 </a></p>
+                <p><i class="far fa-envelope"></i> / dev.brunosf@gmail.com </p>
+                <form name="meu_form">
+                    <div class="form">
+                        <div>
+                            <fieldset>
+                                <input type="text" id="nomeid" placeholder=" Nome: " required />
+                                <legend>Nome <span>*</span></legend>
+                            </fieldset>
+                        </div>
+                        <div>
+                            <fieldset>
+                                <input type="email" id="emailid" placeholder=" Email: " required />
+                                <legend>Email <span>*</span></legend>
+                            </fieldset>
+                        </div>
+                        <div>
+                            <fieldset>
+                                <input type="tel" name="telefone" placeholder=" Telefone: " required>
+                                <legend>Telefone <span>*</span></legend>
+                            </fieldset>
+                        </div>
+                        <div>
+                            <textarea id="textareaid" placeholder="Mensagem: " required></textarea>
+                        </div>
+                        <input id="submitid" type="submit" class="enviar" onclick="Enviar();" value=" Enviar " disabled/>
+                    </div>
+                </form>
+            </div>
+            <div></div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer -->
+        <div>
+            <p>Projeto em desenvolvimento. </p>
+            <p>Site de divulgação currículo/portfólio. </p>
+        </div>
+        <div>
+            <p>&copy; Bruno Freitas 2021/1</p>
+        </div>
+    </footer>
+
+    <!-- Estilos e Animações JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
