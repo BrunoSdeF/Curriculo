@@ -5,7 +5,7 @@ const menu = document.querySelector('header');
 function animeScroll() {
 
     const header = document.querySelector('header');
-    const inicio = header.children[2].children[0].children[0];
+    const inicio = header.children[2].children[0];
 
     /* Muda as cores do menu, background branco e fonte verde (class .header) */
     const aside = document.querySelector('aside');
@@ -28,10 +28,7 @@ function animeScroll() {
     const contato = document.querySelector('.step3');
     const posicaoContato = contato.getBoundingClientRect();
 
-    console.log(posicaoContato.y);
-
     if (posicaoContato.y < 25) {
-        console.log("menos de 10");
         menu.classList.remove("header")
         menu.style.transition = '.5s';
     }

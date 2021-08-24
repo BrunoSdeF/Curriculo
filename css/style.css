@@ -99,6 +99,7 @@ header ul li:nth-child(1) {
   width: 120px;
   height: 35px;
   text-align: center;
+  opacity: 0;
 }
 
 header ul li:nth-child(1) a {
