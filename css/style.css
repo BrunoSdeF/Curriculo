@@ -99,6 +99,7 @@ header ul li:nth-child(1) {
   width: 120px;
   height: 35px;
   text-align: center;
+  display: none;
   opacity: 0;
 }
 
@@ -166,10 +167,16 @@ header ul li:nth-child(3) a {
 }
 
 header ul li:nth-child(3):hover {
-  -webkit-animation: changeColor 7s infinite;
-          animation: changeColor 7s infinite;
+  border-radius: 3px;
+  background-color: transparent;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  cursor: pointer;
+}
+
+header ul li:nth-child(3):hover a {
+  color: #fff;
+  font-weight: 700;
 }
 
 header ul li:nth-child(3):not(:hover) {
@@ -238,7 +245,7 @@ header ul li:nth-child(3):not(:hover) {
 
 .header ul li:nth-child(3):hover a {
   color: #2c8560;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .header ul li:nth-child(3):not(:hover) {
@@ -280,12 +287,12 @@ header ul li:nth-child(3):not(:hover) {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  padding: 10%;
+  padding: 15%;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 .step1 .container div {
-  width: 600px;
+  width: 60%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -312,10 +319,10 @@ header ul li:nth-child(3):not(:hover) {
 .step1 .container div p span {
   width: 100%;
   display: block;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-family: "Poppins";
   color: #fff;
-  line-height: 70px;
+  line-height: 50px;
   letter-spacing: 1px;
 }
 
@@ -339,12 +346,7 @@ aside {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid rgba(99, 233, 178, 0.5);
   background-color: #fff;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 aside .container {
@@ -472,6 +474,94 @@ aside .container div:nth-child(2) figure img {
   position: absolute;
   top: -35px;
   left: -25px;
+}
+
+.step2 {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px 0px 0px;
+  background: #2c8560;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.step2 .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 15%;
+}
+
+.step2 .container div {
+  width: 60%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.step2 .container div div {
+  width: 100%;
+  height: auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.step2 .container div div span {
+  width: 100%;
+  display: block;
+  font-size: 1.5rem;
+  font-family: "Poppins";
+  color: #fff;
+  line-height: 40px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.step2 .container div div ul {
+  font-family: "Poppins";
+  line-height: 40px;
+}
+
+.step2 .container div div ul li {
+  color: #fff;
+  font-weight: 600;
+  list-style: inside decimal-leading-zero;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+}
+
+.step2 .container div div ul li a {
+  color: #fff;
+  padding-left: 5px;
 }
 
 .step3 {

@@ -16,12 +16,14 @@ function animeScroll() {
         menu.style.transition = '.5s';
 
         inicio.style.opacity = '1';
+        inicio.style.display = 'block';
         inicio.style.transition = '.9s';
     } else {
         menu.classList.remove("header")
         menu.style.transition = '.5s';
 
         inicio.style.opacity = '0';
+        inicio.style.display = 'none';
         inicio.style.transition = '.5s';
     }
 
@@ -47,23 +49,23 @@ function animeScroll() {
     const posicao3 = span3.getBoundingClientRect();
     const posicao4 = span4.getBoundingClientRect();
 
-    if (posicao1.y < 45) {
+    if (posicao1.y < 60) {
         span1.style.opacity = '0';
-        span1.style.transition = '.5s';
+        span1.style.transition = '.3s';
     } else {
         span1.style.opacity = '1';
-        span1.style.transition = '.5s';
+        span1.style.transition = '.3s';
     }
 
-    if (posicao2.y < 45) {
+    if (posicao2.y < 60) {
         span2.style.opacity = '0';
-        span2.style.transition = '.5s';
+        span2.style.transition = '.3s';
     } else {
         span2.style.opacity = '1';
-        span2.style.transition = '.5s';
+        span2.style.transition = '.3s';
     }
 
-    if (posicao3.y < 45) {
+    if (posicao3.y < 60) {
         span3.style.opacity = '0';
         span3.style.transition = '.5s';
     } else {
@@ -71,7 +73,7 @@ function animeScroll() {
         span3.style.transition = '.5s';
     }
 
-    if (posicao4.y < 45) {
+    if (posicao4.y < 60) {
         span4.style.opacity = '0';
         span4.style.transition = '.5s';
     } else {
