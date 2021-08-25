@@ -58,14 +58,18 @@
         position: fixed;
         left: 0;
         top: 0;
+        z-index: 50;
         div {
             // logo
             width: auto;
             height: auto;
+            z-index: 10;
             a {
                 color: #fff;
                 font-size: 27px;
                 font-family: $baloo;
+                cursor: pointer;
+                z-index: 10;
             }
         }
         .hamburguer {
@@ -664,21 +668,27 @@
                 left: 87%;
                 cursor: pointer;
                 transition: 0.5s;
-                i {
+                i:nth-child(1) {
                     font-size: 65px;
                     color: #fff;
+                    display: flex;
+                }
+                i:nth-child(2) {
+                    font-size: 35px;
+                    padding-left: 10px;
+                    color: #fff;
+                    display: none;
                 }
             }
             ul {
-                width: 150px;
-                height: 150px;
-                margin-top: 50px;
-                margin-right: -14px;
-                padding: 0px 15px 0px 0px;
+                width: auto;
+                height: auto;
+                margin-top: 150px;
+                margin-right: 0px;
                 position: relative;
                 flex-direction: column;
                 justify-content: center;
-                align-items: flex-end;
+                align-items: flex-start;
                 row-gap: 10px;
                 z-index: 1;
                 display: none;
@@ -691,7 +701,7 @@
                     padding: 0px;
                     display: none;
                     a {
-                        color: $green;
+                        color: #fff;
                     }
                 }
                 li:nth-child(2) {
@@ -701,16 +711,16 @@
                     margin: 5px;
                     padding: 0px;
                     border: none;
-                    border-bottom: 1px solid $green;
+                    border-bottom: 1px solid #fff;
                     a {
-                        color: $green;
+                        color: #fff;
                     }
                     &:hover {
                         background-color: transparent;
                         border: none;
-                        border-bottom: 1px solid $green;
+                        border-bottom: 1px solid #fff;
                         a {
-                            color: $green;
+                            color: #fff;
                             font-weight: 500;
                         }
                     }
@@ -726,17 +736,17 @@
                     padding: 0px;
                     background-color: transparent;
                     border: none;
-                    border-bottom: 1px solid $green;
+                    border-bottom: 1px solid #fff;
                     a {
-                        color: $green;
-                        font-weight: 500;
+                        color: #fff;
+                        font-weight: 600;
                     }
                     &:hover {
                         background: transparent;
                         border: none;
-                        border-bottom: 1px solid $green;
+                        border-bottom: 1px solid #fff;
                         a {
-                            color: $green;
+                            color: #fff;
                         }
                     }
                     &:not(:hover) {
@@ -786,21 +796,33 @@
                 }
             }
             .hamburguer {
+                // Ícone Hamburguer
+                opacity: 1;
+                position: absolute;
                 left: 85%;
-                i {
-                    font-size: 50px;
+                cursor: pointer;
+                transition: 0.5s;
+                i:nth-child(1) {
+                    font-size: 65px;
+                    color: #fff;
+                    display: flex;
+                }
+                i:nth-child(2) {
+                    font-size: 35px;
+                    padding-left: 10px;
+                    color: #fff;
+                    display: none;
                 }
             }
             ul {
-                width: 150px;
-                height: 150px;
-                margin-top: 50px;
-                margin-right: -14px;
-                padding: 0px 15px 0px 0px;
+                width: auto;
+                height: auto;
+                margin-top: 150px;
+                margin-right: 0px;
                 position: relative;
                 flex-direction: column;
                 justify-content: center;
-                align-items: flex-end;
+                align-items: center;
                 row-gap: 10px;
                 z-index: 1;
                 display: none;
@@ -813,7 +835,7 @@
                     padding: 0px;
                     display: none;
                     a {
-                        color: $green;
+                        color: #fff;
                     }
                 }
                 li:nth-child(2) {
@@ -823,16 +845,17 @@
                     margin: 5px;
                     padding: 0px;
                     border: none;
-                    border-bottom: 1px solid $green;
+                    border-bottom: 1px solid #fff;
+                    background-color: #fff;
                     a {
-                        color: $green;
+                        color: #fff;
                     }
                     &:hover {
                         background-color: transparent;
                         border: none;
-                        border-bottom: 1px solid $green;
+                        border-bottom: 1px solid #fff;
                         a {
-                            color: $green;
+                            color: #fff;
                             font-weight: 500;
                         }
                     }
@@ -847,18 +870,19 @@
                     margin: 5px;
                     padding: 0px;
                     background-color: transparent;
-                    border: none;
-                    border-bottom: 1px solid $green;
+                    border: 1px solid #fff;
+                    border-bottom: 1px solid #fff;
+                    background-color: #fff;
                     a {
-                        color: $green;
-                        font-weight: 500;
+                        color: #fff;
+                        font-weight: 600;
                     }
                     &:hover {
                         background: transparent;
                         border: none;
-                        border-bottom: 1px solid $green;
+                        border-bottom: 1px solid #fff;
                         a {
-                            color: $green;
+                            color: #fff;
                         }
                     }
                     &:not(:hover) {

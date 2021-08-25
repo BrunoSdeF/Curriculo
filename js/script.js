@@ -7,7 +7,13 @@ const posicaoSobre = sobre.getBoundingClientRect();
 const contato = document.querySelector('.step3');
 const posicaoContato = contato.getBoundingClientRect();
 
-// Volta a página para o topo...
+// Voltar ao topo clicando no #logo...
+const logo = document.querySelector('#logo').addEventListener("click", function(event) {
+    event.preventDefault;
+    window.scroll(0, 0, 'smooth', behavior = 'smooth');
+});
+
+// Voltar a página para o topo...
 const moveTopo = document.querySelector('.moveTopo');
 moveTopo.addEventListener("click", function(event) {
     event.preventDefault;
@@ -27,14 +33,6 @@ moveContato.addEventListener("click", function(event) {
     event.preventDefault;
     window.scroll(0, posicaoContato.y, behavior = 'smooth');
 });
-
-// const moveContato = document.querySelector('.moveContato');
-// moveContato.addEventListener("click", mover);
-
-// function mover(event) {
-//     event.preventDefault;
-//     window.scroll(0, posicaoContato.y, '1s')
-// }
 
 function animeScroll() {
 
@@ -223,60 +221,38 @@ window.addEventListener('scroll', function() {
 })
 
 // Menu Hamburguer
-/*
-const hamburguer = document.querySelector('.hamburguer');
-const ul = document.querySelector('ul');
+// Quando a página é recarregada com menu aberto li[0] não fica oculta
 
-hamburguer.addEventListener("mouseover", (menuHamburguer));
+// const hamburguer = document.querySelector('.hamburguer');
+// const iconeH = hamburguer.children[0];
+// const iconeX = hamburguer.children[1];
+// const ul = document.querySelector('.ul');
 
-function menuHamburguer() {
-    ul.style.display = 'flex';
-    hamburguer.style.display = 'none';
+// iconeH.addEventListener("click", (menuHamburguer));
 
-    ul.style.transition = '.5s';
-    hamburguer.style.transition = '.5s';
+// function menuHamburguer() {
+//     // Ativa a ul com as li...
+//     ul.style.display = 'flex';
+//     ul.style.transition = '.5s';
+//     // Muda os icones...
+//     iconeH.style.display = 'none';
+//     iconeX.style.display = 'flex';
 
-    ul.addEventListener("mouseout", (closeMenu));
+//     hamburguer.style.transition = '.5s';
 
-    function closeMenu() {
-        ul.style.display = 'none';
-        hamburguer.style.display = 'flex';
+//     window.addEventListener('scroll', function() {
+//         closeMenu();
+//         ul.children[0].style.display = 'none';
+//     })
 
-        ul.style.transition = '.5s';
-        hamburguer.style.transition = '.5s';
-    }
+//     iconeX.addEventListener("click", (closeMenu));
 
-}
-*/
-// Cards 180deg
+//     function closeMenu() {
+//         ul.style.display = 'none';
+//         iconeH.style.display = 'flex';
+//         iconeX.style.display = 'none';
 
-const cards = document.querySelector('.cards');
-//console.log(cards)
-//cards.children[0].addEventListener("mouseover", (girar()));
-//cards.children[1].addEventListener("mouseover", (girar));
-//cards.children[2].addEventListener("mouseover", (girar));
-
-/*function girar() {
-
-    cards.children[0].style.transform = "rotateY(180deg)";
-    cards.children[0].style.transition = '.5s';
-
-    if (cards.children[0].style.transform = "rotateY(180deg)" == true) {
-        const figure = cards.children[0].children[0];
-        const p = cards.children[0].children[1];
-        const img = cards.children[0].children[2];
-        const span = cards.children[0].children[3];
-
-        figure.style.transform = "rotateY(0deg)";
-        p.style.transform = "rotateY(0deg)";
-        img.style.transform = "rotateY(0deg)";
-        span.style.transform = "rotateY(0deg)";
-    }
-
-    cards.children[0].addEventListener("mouseout", (voltar));
-
-    function voltar() {
-        cards.children[0].style.transform = "rotateY(0deg)";
-        cards.children[0].style.transition = '.5s';
-    }
-}*/
+//         ul.style.transition = '.5s';
+//         hamburguer.style.transition = '.5s';
+//     }
+// }

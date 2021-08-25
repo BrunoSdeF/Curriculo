@@ -54,17 +54,21 @@ header {
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 50;
 }
 
 header div {
   width: auto;
   height: auto;
+  z-index: 10;
 }
 
 header div a {
   color: #fff;
   font-size: 27px;
   font-family: "Baloo 2";
+  cursor: pointer;
+  z-index: 10;
 }
 
 header .hamburguer {
@@ -939,16 +943,24 @@ footer div:nth-child(2) p {
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
-  header .hamburguer i {
+  header .hamburguer i:nth-child(1) {
     font-size: 65px;
     color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .hamburguer i:nth-child(2) {
+    font-size: 35px;
+    padding-left: 10px;
+    color: #fff;
+    display: none;
   }
   header ul {
-    width: 150px;
-    height: 150px;
-    margin-top: 50px;
-    margin-right: -14px;
-    padding: 0px 15px 0px 0px;
+    width: auto;
+    height: auto;
+    margin-top: 150px;
+    margin-right: 0px;
     position: relative;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -957,9 +969,9 @@ footer div:nth-child(2) p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     row-gap: 10px;
     z-index: 1;
     display: none;
@@ -974,7 +986,7 @@ footer div:nth-child(2) p {
     display: none;
   }
   header ul li:nth-child(1) a {
-    color: #2c8560;
+    color: #fff;
   }
   header ul li:nth-child(2) {
     width: 100px;
@@ -982,18 +994,18 @@ footer div:nth-child(2) p {
     margin: 5px;
     padding: 0px;
     border: none;
-    border-bottom: 1px solid #2c8560;
+    border-bottom: 1px solid #fff;
   }
   header ul li:nth-child(2) a {
-    color: #2c8560;
+    color: #fff;
   }
   header ul li:nth-child(2):hover {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #2c8560;
+    border-bottom: 1px solid #fff;
   }
   header ul li:nth-child(2):hover a {
-    color: #2c8560;
+    color: #fff;
     font-weight: 500;
   }
   header ul li:nth-child(2):not(:hover) {
@@ -1007,19 +1019,19 @@ footer div:nth-child(2) p {
     padding: 0px;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #2c8560;
+    border-bottom: 1px solid #fff;
   }
   header ul li:nth-child(3) a {
-    color: #2c8560;
-    font-weight: 500;
+    color: #fff;
+    font-weight: 600;
   }
   header ul li:nth-child(3):hover {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #2c8560;
+    border-bottom: 1px solid #fff;
   }
   header ul li:nth-child(3):hover a {
-    color: #2c8560;
+    color: #fff;
   }
   header ul li:nth-child(3):not(:hover) {
     -webkit-transition: 0.5s;
@@ -1059,17 +1071,31 @@ footer div:nth-child(2) p {
     font-size: 23px;
   }
   header .hamburguer {
+    opacity: 1;
+    position: absolute;
     left: 85%;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
   }
-  header .hamburguer i {
-    font-size: 50px;
+  header .hamburguer i:nth-child(1) {
+    font-size: 65px;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .hamburguer i:nth-child(2) {
+    font-size: 35px;
+    padding-left: 10px;
+    color: #fff;
+    display: none;
   }
   header ul {
-    width: 150px;
-    height: 150px;
-    margin-top: 50px;
-    margin-right: -14px;
-    padding: 0px 15px 0px 0px;
+    width: auto;
+    height: auto;
+    margin-top: 150px;
+    margin-right: 0px;
     position: relative;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1078,9 +1104,9 @@ footer div:nth-child(2) p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     row-gap: 10px;
     z-index: 1;
     display: none;
@@ -1095,7 +1121,7 @@ footer div:nth-child(2) p {
     display: none;
   }
   header ul li:nth-child(1) a {
-    color: #2c8560;
+    color: #fff;
   }
   header ul li:nth-child(2) {
     width: 100px;
@@ -1103,18 +1129,19 @@ footer div:nth-child(2) p {
     margin: 5px;
     padding: 0px;
     border: none;
-    border-bottom: 1px solid #2c8560;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
   }
   header ul li:nth-child(2) a {
-    color: #2c8560;
+    color: #fff;
   }
   header ul li:nth-child(2):hover {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #2c8560;
+    border-bottom: 1px solid #fff;
   }
   header ul li:nth-child(2):hover a {
-    color: #2c8560;
+    color: #fff;
     font-weight: 500;
   }
   header ul li:nth-child(2):not(:hover) {
@@ -1127,20 +1154,21 @@ footer div:nth-child(2) p {
     margin: 5px;
     padding: 0px;
     background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #2c8560;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
   }
   header ul li:nth-child(3) a {
-    color: #2c8560;
-    font-weight: 500;
+    color: #fff;
+    font-weight: 600;
   }
   header ul li:nth-child(3):hover {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #2c8560;
+    border-bottom: 1px solid #fff;
   }
   header ul li:nth-child(3):hover a {
-    color: #2c8560;
+    color: #fff;
   }
   header ul li:nth-child(3):not(:hover) {
     -webkit-transition: 0.5s;
