@@ -85,6 +85,7 @@
                 height: 35px;
                 text-align: center;
                 display: none;
+                cursor: pointer;
                 opacity: 0;
                 a {
                     color: #fff;
@@ -93,6 +94,7 @@
                     font-weight: 700;
                     line-height: 35px;
                     letter-spacing: 1px;
+                    cursor: pointer;
                 }
             }
             li:nth-child(2) {
@@ -173,8 +175,10 @@
         ul {
             li:nth-child(1) {
                 // como funciona?
+                cursor: pointer;
                 a {
                     color: $green;
+                    cursor: pointer;
                 }
             }
             li:nth-child(2) {

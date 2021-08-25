@@ -1,27 +1,40 @@
 // Menu scroll
-
 const menu = document.querySelector('header');
+// Pegando a posicao.y do aside (Sobre)...
+const sobre = document.querySelector('aside');
+const posicaoSobre = sobre.getBoundingClientRect();
+// Pegando a posicao.y do step3 (Contato)...
+const contato = document.querySelector('.step3');
+const posicaoContato = contato.getBoundingClientRect();
 
+// Volta a página para o topo...
 const moveTopo = document.querySelector('.moveTopo');
 moveTopo.addEventListener("click", function(event) {
-    moveTopo.preventDefault;
-    console.log(moveTopo);
+    event.preventDefault;
+    window.scroll(0, 0, 'smooth', behavior = 'smooth');
 });
+
+// Scroll da página até o aside (Sobre)...
 const moveSobre = document.querySelector('.moveSobre');
 moveSobre.addEventListener("click", function(event) {
     event.preventDefault;
-    console.log(moveSobre);
-});
-const moveContato = document.querySelector('.moveContato');
-moveSobre.addEventListener("click", function(event) {
-    event.preventDefault;
-    console.log(moveSobre);
+    window.scroll(0, posicaoSobre.y, behavior = 'smooth');
 });
 
-function clicou() {
-    // event.preventDefault;
-    console.log("Clicou");
-}
+// Scroll da página até o .step3 (Contato)...
+const moveContato = document.querySelector('.moveContato');
+moveContato.addEventListener("click", function(event) {
+    event.preventDefault;
+    window.scroll(0, posicaoContato.y, behavior = 'smooth');
+});
+
+// const moveContato = document.querySelector('.moveContato');
+// moveContato.addEventListener("click", mover);
+
+// function mover(event) {
+//     event.preventDefault;
+//     window.scroll(0, posicaoContato.y, '1s')
+// }
 
 function animeScroll() {
 
