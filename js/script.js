@@ -220,6 +220,20 @@ window.addEventListener('scroll', function() {
     animeAside();
 })
 
+const email = document.querySelector('#emailid');
+console.log(email);
+email.addEventListener("change", (validarEmail));
+
+function validarEmail() {
+    if (email.value.indexOf("@") == -1) {
+        email.valid = false;
+    }
+    if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1) {
+        email.valid = false;
+        // email.disabled = true;
+    }
+}
+
 // Menu Hamburguer
 // Quando a página é recarregada com menu aberto li[0] não fica oculta
 
