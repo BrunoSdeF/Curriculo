@@ -126,15 +126,32 @@ function animeScroll() {
     }
 
     const step3 = document.querySelector('.step3');
-    const h1 = step3.children[0].children[0].children[0];
+    const h1 = step3.children[0].children[0].children[0].children[0];
+    const p1 = step3.children[0].children[0].children[0].children[1];
+    const p2 = step3.children[0].children[0].children[0].children[2];
     const posicaoh1 = h1.getBoundingClientRect();
 
+    console.log(p2);
     if (posicaoh1.y < 45) {
         h1.style.opacity = '0';
         h1.style.transition = '.3s';
     } else {
         h1.style.opacity = '1';
         h1.style.transition = '.3s';
+    }
+    if (posicaoh1.y < 15) {
+        p1.style.opacity = '0';
+        p1.style.transition = '.3s';
+    } else {
+        p1.style.opacity = '1';
+        p1.style.transition = '.3s';
+    }
+    if (posicaoh1.y < -15) {
+        p2.style.opacity = '0';
+        p2.style.transition = '.3s';
+    } else {
+        p2.style.opacity = '1';
+        p2.style.transition = '.3s';
     }
 }
 
@@ -221,7 +238,6 @@ window.addEventListener('scroll', function() {
 })
 
 const email = document.querySelector('#emailid');
-console.log(email);
 email.addEventListener("change", (validarEmail));
 
 function validarEmail() {

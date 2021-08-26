@@ -590,10 +590,15 @@ aside .container div:nth-child(2) figure img {
   overflow: hidden;
 }
 
-.step3 .container {
-  width: 100%;
+.step3 div:nth-child(1) {
+  width: 100vw;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.step3 .container {
+  width: 100vw;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -603,8 +608,7 @@ aside .container div:nth-child(2) figure img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 50px;
-  padding-left: 15%;
+  padding: 15%;
 }
 
 .step3 .container div {
