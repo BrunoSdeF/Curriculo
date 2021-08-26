@@ -401,26 +401,6 @@ aside .container div:nth-child(1) {
           align-items: center;
 }
 
-aside .container div:nth-child(1) ul {
-  /*
-                li:nth-child(2) {
-                    list-style-type: "\2680";
-                }
-                li:nth-child(3) {
-                    list-style-type: "\2681";
-                }
-                li:nth-child(4) {
-                    list-style-type: "\2682";
-                }
-                li:nth-child(5) {
-                    list-style-type: "\2683";
-                }
-                li:nth-child(6) {
-                    list-style-type: "\2684";
-                }
-                */
-}
-
 aside .container div:nth-child(1) ul span {
   color: #2c8560;
   font-size: 1.3em;
