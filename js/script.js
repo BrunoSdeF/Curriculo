@@ -130,8 +130,6 @@ function animeScroll() {
     const p1 = step3.children[0].children[0].children[0].children[1];
     const p2 = step3.children[0].children[0].children[0].children[2];
     const posicaoh1 = h1.getBoundingClientRect();
-
-    console.log(p2);
     if (posicaoh1.y < 45) {
         h1.style.opacity = '0';
         h1.style.transition = '.3s';
