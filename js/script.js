@@ -126,10 +126,11 @@ function animeScroll() {
     }
 
     const step3 = document.querySelector('.step3');
-    const h1 = step3.children[0].children[0].children[0].children[0];
-    const p1 = step3.children[0].children[0].children[0].children[1];
-    const p2 = step3.children[0].children[0].children[0].children[2];
+    const h1 = step3.children[0].children[0].children[0];
+    const p1 = step3.children[0].children[0].children[1];
+    const p2 = step3.children[0].children[0].children[2];
     const posicaoh1 = h1.getBoundingClientRect();
+
     if (posicaoh1.y < 45) {
         h1.style.opacity = '0';
         h1.style.transition = '.3s';
