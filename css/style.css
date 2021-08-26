@@ -155,8 +155,8 @@ header ul li:nth-child(3) {
   height: 35px;
   text-align: center;
   border-radius: 3px;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
   background-color: #fff;
   border: 1px solid #fff;
 }
