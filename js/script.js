@@ -252,36 +252,39 @@ function validarEmail() {
 // Menu Hamburguer
 // Quando a página é recarregada com menu aberto li[0] não fica oculta
 
-// const hamburguer = document.querySelector('.hamburguer');
-// const iconeH = hamburguer.children[0];
-// const iconeX = hamburguer.children[1];
-// const ul = document.querySelector('.ul');
+const hamburguer = document.querySelector('.hamburguer');
+const iconeH = hamburguer.children[0];
+const iconeX = hamburguer.children[1];
+const ul = document.querySelector('.ul');
 
-// iconeH.addEventListener("click", (menuHamburguer));
+iconeH.addEventListener("click", (menuHamburguer));
 
-// function menuHamburguer() {
-//     // Ativa a ul com as li...
-//     ul.style.display = 'flex';
-//     ul.style.transition = '.5s';
-//     // Muda os icones...
-//     iconeH.style.display = 'none';
-//     iconeX.style.display = 'flex';
+function menuHamburguer() {
+    // Ativa a ul com as li...
+    ul.style.display = 'flex';
+    ul.style.transition = '.5s';
+    console.log(hamburguer)
+    console.log(ul)
+        // Muda os icones...
+    iconeH.style.display = 'none';
+    iconeX.style.display = 'flex';
+    // el.classList.toggle('is-active');
+    // $target.classList.toggle('is-active');
+    hamburguer.style.transition = '.5s';
 
-//     hamburguer.style.transition = '.5s';
+    window.addEventListener('scroll', function() {
+        closeMenu();
+        ul.children[0].style.display = 'none';
+    })
 
-//     window.addEventListener('scroll', function() {
-//         closeMenu();
-//         ul.children[0].style.display = 'none';
-//     })
+    iconeX.addEventListener("click", (closeMenu));
 
-//     iconeX.addEventListener("click", (closeMenu));
+    function closeMenu() {
+        ul.style.display = 'none';
+        iconeH.style.display = 'flex';
+        iconeX.style.display = 'none';
 
-//     function closeMenu() {
-//         ul.style.display = 'none';
-//         iconeH.style.display = 'flex';
-//         iconeX.style.display = 'none';
-
-//         ul.style.transition = '.5s';
-//         hamburguer.style.transition = '.5s';
-//     }
-// }
+        ul.style.transition = '.5s';
+        hamburguer.style.transition = '.5s';
+    }
+}

@@ -932,6 +932,7 @@ footer div:nth-child(2) p {
   header {
     -webkit-transition: 0.5s;
     transition: 0.5s;
+    overflow: visible;
   }
   header .hamburguer {
     opacity: 1;
@@ -1252,7 +1253,10 @@ footer div:nth-child(2) p {
 @media only screen and (max-width: 425px) {
   header {
     width: 100vw;
-    padding: 0px;
+    padding: 0px 20px 0px 0px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   header div {
     position: absolute;
@@ -1321,7 +1325,6 @@ footer div:nth-child(2) p {
     padding: 0px;
     border: none;
     border-bottom: 1px solid #fff;
-    background-color: #fff;
   }
   header ul li:nth-child(2) a {
     color: #fff;
@@ -1345,9 +1348,8 @@ footer div:nth-child(2) p {
     margin: 5px;
     padding: 0px;
     background-color: transparent;
-    border: 1px solid #fff;
+    border: none;
     border-bottom: 1px solid #fff;
-    background-color: #fff;
   }
   header ul li:nth-child(3) a {
     color: #fff;

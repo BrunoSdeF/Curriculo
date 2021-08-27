@@ -657,6 +657,7 @@ footer {
 @media only screen and (max-width: 768px) {
     header {
         transition: 0.5s;
+        overflow: visible;
         .hamburguer {
             // Ícone Hamburguer
             opacity: 1;
@@ -985,7 +986,8 @@ footer {
 @media only screen and (max-width: 425px) {
     header {
         width: 100vw;
-        padding: 0px;
+        padding: 0px 20px 0px 0px;
+        justify-content: flex-end;
         div {
             position: absolute;
             left: 5%;
@@ -1044,7 +1046,6 @@ footer {
                 padding: 0px;
                 border: none;
                 border-bottom: 1px solid #fff;
-                background-color: #fff;
                 a {
                     color: #fff;
                 }
@@ -1068,9 +1069,8 @@ footer {
                 margin: 5px;
                 padding: 0px;
                 background-color: transparent;
-                border: 1px solid #fff;
+                border: none;
                 border-bottom: 1px solid #fff;
-                background-color: #fff;
                 a {
                     color: #fff;
                     font-weight: 600;
