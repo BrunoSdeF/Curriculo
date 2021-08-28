@@ -370,11 +370,9 @@ aside {
                 overflow: hidden;
                 border-radius: 5px;
                 img {
-                    width: 350px;
-                    height: 615px;
+                    width: 100%;
+                    height: 100%;
                     position: absolute;
-                    top: -35px;
-                    left: -25px;
                 }
             }
         }
@@ -852,7 +850,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 715px) {
+@media only screen and (max-width: 720px) {
     .step1 {
         .container {
             div {
@@ -878,8 +876,19 @@ footer {
                     span {
                         font-size: 1.1em;
                     }
+                    li:nth-child(1) {
+                        color: $green;
+                        width: 95%;
+                        height: 45px;
+                        font-size: 1em;
+                        font-weight: 700;
+                        letter-spacing: 3px;
+                        border-bottom: 1px solid #2c856091;
+                        transform: translateX(-500px);
+                        list-style: none;
+                    }
                     li {
-                        font-size: 2.1em;
+                        font-size: 2em;
                         letter-spacing: 1px;
                         span {
                             font-size: 15px;
@@ -904,11 +913,10 @@ footer {
                     height: 380px;
                     transition: 0.3s;
                     img {
-                        width: 350px;
-                        height: 615px;
+                        width: 150%;
+                        height: 100%;
                         position: absolute;
-                        top: -35px;
-                        left: -80px;
+                        left: -50px;
                         transition: 0.9s;
                     }
                 }
@@ -945,6 +953,17 @@ footer {
                 ul {
                     span {
                         font-size: 1.1em;
+                    }
+                    li:nth-child(1) {
+                        color: $green;
+                        width: 80%;
+                        height: 45px;
+                        font-size: 1em;
+                        font-weight: 700;
+                        letter-spacing: 3px;
+                        border-bottom: 1px solid #2c856091;
+                        transform: translateX(-500px);
+                        list-style: none;
                     }
                     li {
                         font-size: 2.1em;
