@@ -1173,7 +1173,7 @@ footer {
     .step3 {
         .container {
             justify-content: center;
-            padding-left: 0%;
+            padding-left: 10%;
             div {
                 width: 270px;
                 h1 {
@@ -1193,15 +1193,16 @@ footer {
     }
     footer {
         width: 100vw;
-        height: 8vh;
+        height: auto;
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        flex-direction: column;
         font: $baloo;
         background-color: #2c8560;
-        padding: 0px 5vw;
+        padding: 10px 5vw;
         div:nth-child(1) {
-            width: 60vw;
+            width: 90vw;
             height: auto;
             color: #fff;
             font-family: $poppins;
@@ -1209,7 +1210,7 @@ footer {
             display: flex;
             flex-direction: column;
             p {
-                font-size: 0.5rem;
+                font-size: .8rem;
                 font-family: $poppins;
                 font-weight: 600;
                 letter-spacing: 1px;
@@ -1217,16 +1218,17 @@ footer {
             }
         }
         div:nth-child(2) {
-            width: 40vw;
+            width: 90vw;
             height: auto;
             color: #fff;
             font-family: $poppins;
             font-weight: 600;
             display: flex;
-            justify-content: flex-end;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
             p {
-                font-size: 0.7rem;
+                font-size: .8rem;
                 font-family: $poppins;
                 font-weight: 600;
                 letter-spacing: 1px;

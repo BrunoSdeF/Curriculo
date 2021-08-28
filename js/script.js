@@ -263,18 +263,14 @@ function menuHamburguer() {
     // Ativa a ul com as li...
     ul.style.display = 'flex';
     ul.style.transition = '.5s';
-    console.log(hamburguer)
-    console.log(ul)
-        // Muda os icones...
+    ul.children[0].style.display = 'none';
+    // Muda os icones...
     iconeH.style.display = 'none';
     iconeX.style.display = 'flex';
-    // el.classList.toggle('is-active');
-    // $target.classList.toggle('is-active');
     hamburguer.style.transition = '.5s';
 
     window.addEventListener('scroll', function() {
         closeMenu();
-        ul.children[0].style.display = 'none';
     })
 
     iconeX.addEventListener("click", (closeMenu));
