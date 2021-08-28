@@ -236,6 +236,18 @@ window.addEventListener('scroll', function() {
     animeAside();
 })
 
+// focus no nome
+const form = document.querySelector('form');
+form.addEventListener("click", (formName));
+
+const nomeid = document.querySelector('#nomeid');
+
+function formName() {
+    if (nomeid.value.length == 0) {
+        nomeid.focus();
+    }
+}
+
 const email = document.querySelector('#emailid');
 email.addEventListener("change", (validarEmail));
 
