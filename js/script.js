@@ -168,16 +168,22 @@ function animeAside() {
     const li4 = ul.children[4];
     const li5 = ul.children[5];
 
-    if (posicaoAside.y < 470) {
-        span.style.opacity = '1';
-        span.style.transition = '.7s';
+    if (posicaoAside.y < 460) {
         img.style.opacity = '1';
         img.style.transition = '.9s';
     } else {
-        span.style.opacity = '0';
-        span.style.transition = '.7s';
         img.style.opacity = '0';
         img.style.transition = '.9s';
+    }
+
+    if (posicaoAside.y < 445) {
+        span.style.transform = "translateX(0px)";
+        span.style.opacity = '1';
+        span.style.transition = '.5s';
+    } else {
+        span.style.transform = "translateX(-500px)";
+        span.style.opacity = '0';
+        span.style.transition = '.5s';
     }
 
     if (posicaoAside.y < 415) {
