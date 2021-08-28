@@ -18,6 +18,7 @@ window.setTimeout(function() {
         event.preventDefault;
         window.scroll(0, 0, 'smooth', behavior = 'smooth');
     });
+
     const iconeHX = document.querySelector('.icone').addEventListener("click", function(event) {
         event.preventDefault;
     });
