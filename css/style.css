@@ -415,20 +415,19 @@ aside .container div:nth-child(1) {
   font-family: "Poppins";
 }
 
-aside .container div:nth-child(1) ul li:nth-child(1) {
+aside .container div:nth-child(1) ol li:nth-child(1) {
   color: #2c8560;
-  width: 90%;
+  width: 100%;
   height: 45px;
   font-size: 1.3em;
   font-weight: 700;
   letter-spacing: 3px;
-  border-bottom: 1px solid #2c856091;
   -webkit-transform: translateX(-500px);
           transform: translateX(-500px);
   list-style: none;
 }
 
-aside .container div:nth-child(1) ul li {
+aside .container div:nth-child(1) ol li {
   color: #2c8560dd;
   font-weight: 600;
   list-style: inside decimal-leading-zero;
@@ -436,7 +435,7 @@ aside .container div:nth-child(1) ul li {
   letter-spacing: 3px;
 }
 
-aside .container div:nth-child(1) ul li span {
+aside .container div:nth-child(1) ol li span {
   color: #2c8560dd;
   letter-spacing: 1px;
   font-size: 15px;
@@ -444,14 +443,14 @@ aside .container div:nth-child(1) ul li span {
   opacity: 0;
 }
 
-aside .container div:nth-child(1) ul li:hover span {
+aside .container div:nth-child(1) ol li:hover span {
   color: #2c8560dd;
   opacity: 1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-aside .container div:nth-child(1) ul li:not(:hover) span {
+aside .container div:nth-child(1) ol li:not(:hover) span {
   -webkit-transition: 0.7s;
   transition: 0.7s;
 }
@@ -1006,9 +1005,11 @@ footer div:nth-child(2) p {
   }
   header .hamburguer i:nth-child(2) {
     font-size: 35px;
-    padding-left: 10px;
     color: #fff;
     display: none;
+    -webkit-transform: rotate(38deg);
+            transform: rotate(38deg);
+    padding: 5px 0px 0px 6px;
   }
   header ul {
     width: auto;
@@ -1104,6 +1105,9 @@ footer div:nth-child(2) p {
   .step1 .container div p span:nth-child(4) {
     font-size: clamp(2rem, 8.5vw, 3.5rem);
   }
+  aside .container div:nth-child(1) ol li:nth-child(1) {
+    list-style: none;
+  }
   aside .container div:nth-child(2) {
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -1157,35 +1161,34 @@ footer div:nth-child(2) p {
   aside .container div:nth-child(1) {
     width: 40%;
   }
-  aside .container div:nth-child(1) ul span {
+  aside .container div:nth-child(1) ol span {
     font-size: 1.1em;
   }
-  aside .container div:nth-child(1) ul li:nth-child(1) {
+  aside .container div:nth-child(1) ol li:nth-child(1) {
     color: #2c8560;
     width: 95%;
     height: 45px;
     font-size: 1em;
     font-weight: 700;
     letter-spacing: 3px;
-    border-bottom: 1px solid #2c856091;
     -webkit-transform: translateX(-500px);
             transform: translateX(-500px);
     list-style: none;
   }
-  aside .container div:nth-child(1) ul li {
+  aside .container div:nth-child(1) ol li {
     font-size: 2em;
     letter-spacing: 1px;
   }
-  aside .container div:nth-child(1) ul li span {
+  aside .container div:nth-child(1) ol li span {
     font-size: 15px;
   }
-  aside .container div:nth-child(1) ul li:hover span {
+  aside .container div:nth-child(1) ol li:hover span {
     color: #2c8560dd;
     opacity: 1;
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
-  aside .container div:nth-child(1) ul li:not(:hover) span {
+  aside .container div:nth-child(1) ol li:not(:hover) span {
     -webkit-transition: 0.7s;
     transition: 0.7s;
   }

@@ -320,15 +320,14 @@ aside {
             justify-content: center;
             align-items: center;
             font-family: $poppins;
-            ul {
+            ol {
                 li:nth-child(1) {
                     color: $green;
-                    width: 90%;
+                    width: 100%;
                     height: 45px;
                     font-size: 1.3em;
                     font-weight: 700;
                     letter-spacing: 3px;
-                    border-bottom: 1px solid #2c856091;
                     transform: translateX(-500px);
                     list-style: none;
                 }
@@ -711,9 +710,10 @@ footer {
             }
             i:nth-child(2) {
                 font-size: 35px;
-                padding-left: 10px;
                 color: #fff;
                 display: none;
+                transform: rotate(38deg);
+                padding: 5px 0px 0px 6px;
             }
         }
         ul {
@@ -809,6 +809,13 @@ footer {
     }
     aside {
         .container {
+            div:nth-child(1) {
+                ol {
+                    li:nth-child(1) {
+                        list-style: none;
+                    }
+                }
+            }
             div:nth-child(2) {
                 transition: 0.5s;
                 figure {
@@ -872,7 +879,7 @@ footer {
         .container {
             div:nth-child(1) {
                 width: 40%;
-                ul {
+                ol {
                     span {
                         font-size: 1.1em;
                     }
@@ -883,7 +890,6 @@ footer {
                         font-size: 1em;
                         font-weight: 700;
                         letter-spacing: 3px;
-                        border-bottom: 1px solid #2c856091;
                         transform: translateX(-500px);
                         list-style: none;
                     }
