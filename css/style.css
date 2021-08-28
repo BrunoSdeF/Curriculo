@@ -415,14 +415,17 @@ aside .container div:nth-child(1) {
   font-family: "Poppins";
 }
 
-aside .container div:nth-child(1) ul span {
+aside .container div:nth-child(1) ul li:nth-child(1) {
   color: #2c8560;
+  width: 90%;
+  height: 45px;
   font-size: 1.3em;
   font-weight: 700;
   letter-spacing: 3px;
   border-bottom: 1px solid #2c856091;
   -webkit-transform: translateX(-500px);
           transform: translateX(-500px);
+  list-style: none;
 }
 
 aside .container div:nth-child(1) ul li {

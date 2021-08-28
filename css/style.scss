@@ -321,13 +321,16 @@ aside {
             align-items: center;
             font-family: $poppins;
             ul {
-                span {
+                li:nth-child(1) {
                     color: $green;
+                    width: 90%;
+                    height: 45px;
                     font-size: 1.3em;
                     font-weight: 700;
                     letter-spacing: 3px;
                     border-bottom: 1px solid #2c856091;
                     transform: translateX(-500px);
+                    list-style: none;
                 }
                 li {
                     color: #2c8560dd;
