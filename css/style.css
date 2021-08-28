@@ -82,10 +82,11 @@ header div {
   z-index: 10;
 }
 
-header div a {
+header div b {
   color: #fff;
   font-size: 27px;
   font-family: "Baloo 2";
+  font-weight: 100;
   cursor: pointer;
   z-index: 10;
 }
@@ -215,7 +216,7 @@ header ul li:nth-child(3):not(:hover) {
   z-index: 10;
 }
 
-.header div a {
+.header div b {
   color: #2c8560;
 }
 
@@ -1346,7 +1347,7 @@ footer div:nth-child(2) p {
     position: absolute;
     left: 5%;
   }
-  header div a {
+  header div b {
     font-size: 23px;
   }
   header .hamburguer {
