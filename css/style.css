@@ -989,14 +989,14 @@ footer div:nth-child(2) p {
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
-  header .hamburguer a:nth-child(1) {
+  header .hamburguer b:nth-child(1) {
     font-size: 65px;
     color: #fff;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  header .hamburguer a:nth-child(2) {
+  header .hamburguer b:nth-child(2) {
     font-size: 35px;
     color: #fff;
     display: none;
@@ -1357,14 +1357,14 @@ footer div:nth-child(2) p {
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
-  header .hamburguer i:nth-child(1) {
+  header .hamburguer b:nth-child(1) {
     font-size: 65px;
     color: #fff;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  header .hamburguer i:nth-child(2) {
+  header .hamburguer b:nth-child(2) {
     font-size: 35px;
     padding-left: 10px;
     color: #fff;
