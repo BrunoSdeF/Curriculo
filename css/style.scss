@@ -1,39 +1,56 @@
-/* Fontes */
-
 @font-face {
-    font-family: 'Baloo 2';
+    font-family: "Baloo 2";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(https://fonts.gstatic.com/s/baloo2/v2/wXKrE3kTposypRyd51jcAA.woff2) format('woff2');
+    src: url(https://fonts.gstatic.com/s/baloo2/v2/wXKrE3kTposypRyd51jcAA.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 100;
     font-display: swap;
-    src: url(https://fonts.gstatic.com/s/poppins/v15/pxiGyp8kv8JHgFVrLPTucHtA.woff2) format('woff2');
+    src: url(https://fonts.gstatic.com/s/poppins/v15/pxiGyp8kv8JHgFVrLPTucHtA.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-$baloo: "Baloo 2";
-$poppins: "Poppins";
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
 
-/* Cores */
+@mixin display($display, $direction, $content, $align) {
+    display: $display;
+    align-items: $align;
+    justify-content: $content;
+    flex-direction: $direction;
+}
 
-$gray: #333333;
+@mixin color($bgcolor, $color, $border) {
+    background-color: $bgcolor;
+    color: $color;
+    border: $border;
+}
+
+@mixin font($family, $size, $weight) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
 $green: #2c8560;
-$red: #ff002f;
-//$green: #63e9b2;
-// $bgreen: #5cc1af;
-// $greenlgt: #2c8560dd;
-// $greendrk: #00b269;
-// $yellow: #ffde59;
-// $green: #00ffa1;
-// $blue: #00d9e0;
-// $gradient: linear-gradient(90deg, #60ffff, #60ff60);
+$valid: #00ffa1;
+$invalid: #ff002f;
 * {
     margin: 0px;
     border: none;
@@ -60,81 +77,57 @@ body {
 }
 
 header {
-    width: 100vw;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include size(100vw, 80px);
+    @include display(flex, row, space-between, center);
+    @include color(transparent, null, null);
+    @include position(fixed, 0, null, null, 0);
     padding: 0px 60px;
-    background: transparent;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 50;
-    overflow-x: none;
     overflow: hidden;
+    z-index: 50;
     div {
-        // logo
-        width: auto;
-        height: auto;
-        z-index: 10;
+        @include size(auto, auto);
         b {
-            color: #fff;
-            font-size: 27px;
-            font-family: $baloo;
-            font-weight: 100;
+            @include font("baloo 2", 27px, 100);
+            @include color(transparent, #fff, null);
             cursor: pointer;
-            z-index: 10;
         }
     }
     .hamburguer {
-        // Ícone Hamburguer
         opacity: 0;
     }
     ul {
-        width: auto;
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        @include size(auto, auto);
+        @include display(flex, row, space-between, center);
         column-gap: 25px;
-        justify-content: space-between;
         li:nth-child(1) {
-            width: 120px;
-            height: 35px;
+            @include size(120px, 35px);
             text-align: center;
             display: none;
-            cursor: pointer;
             opacity: 0;
+            cursor: pointer;
             a {
-                color: #fff;
-                font-size: 19px;
-                font-family: $poppins;
-                font-weight: 700;
+                @include font("poppins", 19px, 700);
                 line-height: 35px;
                 letter-spacing: 1px;
+                @include color(transparent, #fff, null);
                 cursor: pointer;
             }
         }
         li:nth-child(2) {
-            width: 120px;
-            height: 35px;
-            text-align: center;
+            @include size(120px, 35px);
+            @include color(transparent, #fff, 1px solid #fff);
             border-radius: 3px;
-            border: 1px solid #fff;
+            text-align: center;
+            cursor: pointer;
             a {
-                color: #fff;
-                font-size: 17px;
-                font-family: $poppins;
-                font-weight: 700;
+                @include font("poppins", 17px, 700);
                 line-height: 35px;
-                letter-spacing: 0px;
+                @include color(transparent, #fff, null);
+                cursor: pointer;
             }
             &:hover {
-                border-radius: 3px;
                 background-color: #fff;
                 transition: 0.5s;
-                cursor: pointer;
                 a {
                     color: #000;
                 }
@@ -144,29 +137,22 @@ header {
             }
         }
         li:nth-child(3) {
-            width: 120px;
-            height: 35px;
-            text-align: center;
+            @include size(120px, 35px);
+            @include color(#fff, #000, 1px solid #fff);
             border-radius: 3px;
-            transition: 0.5s;
-            background-color: #fff;
-            border: 1px solid #fff;
+            text-align: center;
+            cursor: pointer;
             a {
-                color: #000;
-                font-size: 17px;
-                font-family: $poppins;
-                font-weight: 700;
+                @include font("poppins", 17px, 700);
                 line-height: 35px;
-                letter-spacing: 0px;
+                @include color(transparent, #000, null);
+                cursor: pointer;
             }
             &:hover {
-                border-radius: 3px;
                 background-color: transparent;
                 transition: 0.5s;
-                cursor: pointer;
                 a {
                     color: #fff;
-                    font-weight: 700;
                 }
             }
             &:not(:hover) {
@@ -177,27 +163,18 @@ header {
 }
 
 .header {
-    height: 60px;
-    background: #f5f5f5;
-    transition: 0.5s;
+    @include size(100vw, 60px);
+    @include color(#f5f5f5, null, null);
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
-    z-index: 10;
     div {
         b {
             color: $green;
         }
     }
-    .hamburguer {
-        // Ícone Hamburguer
-        z-index: 1;
-    }
     ul {
         li:nth-child(1) {
-            // como funciona?
-            cursor: pointer;
             a {
                 color: $green;
-                cursor: pointer;
             }
         }
         li:nth-child(2) {
@@ -210,7 +187,7 @@ header {
                 border: 1px solid $green;
                 a {
                     color: #fff;
-                    font-weight: 500;
+                    font-weight: 700;
                 }
             }
             &:not(:hover) {
@@ -222,13 +199,12 @@ header {
             border: 1px solid $green;
             a {
                 color: #fff;
-                font-weight: 500;
+                font-weight: 700;
             }
             &:hover {
                 border: 1px solid $green;
                 a {
                     color: $green;
-                    font-weight: 700;
                 }
             }
             &:not(:hover) {
@@ -239,137 +215,68 @@ header {
 }
 
 .step1 {
-    //buscar projetos
-    width: 100vw;
-    height: 100vh;
-    margin: 0px 0px 0px;
+    @include size(100vw, 100vh);
+    @include display(flex, row, center, center);
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/pexels-photo-247791.webp);
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
     overflow: hidden;
     .container {
-        width: 100vw;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        padding: 15%;
-        font-weight: 600;
-        div {
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            background-color: transparent;
-            p {
-                width: 100%;
-                height: auto;
-                transition: 0.5s;
-                span {
-                    width: 100%;
-                    display: block;
-                    font-size: clamp(1.1rem, 1.3rem, 1.7rem);
-                    font-family: $poppins;
-                    color: #fff;
-                    line-height: 50px;
-                    letter-spacing: 1px;
-                }
-                span:nth-child(4) {
-                    color: #fff;
-                    font-family: $poppins;
-                    font-size: clamp(2rem, 8.5vw, 3.5rem);
-                    margin-top: 25px;
-                    letter-spacing: 5px;
-                }
+        @include size(80vw, 100%);
+        @include display(flex, column, center, center);
+        p {
+            @include size(100%, auto);
+            span {
+                @include size(100%, auto);
+                display: block;
+                @include color(null, #fff, null);
+                @include font("poppins", calc(0.7em + 1vw), 600);
+                line-height: 55px;
+                letter-spacing: 2px;
+            }
+            span:nth-child(4) {
+                font-size: calc(2.1em + 1vw);
+                letter-spacing: 5px;
+                margin-top: 25px;
             }
         }
     }
 }
 
 aside {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
+    @include size(100vw, 100vh);
     overflow: hidden;
     .container {
-        width: 100vw;
-        height: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: #fff;
-        line-height: 50px;
+        @include size(100vw, 100%);
+        @include color(#fff, $green, null);
+        @include display(flex, row, space-evenly, center);
         div:nth-child(1) {
-            width: 40%;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: $poppins;
+            @include size(40%, auto);
+            @include display(flex, column, center, center);
             ol {
-                li:nth-child(1) {
-                    color: $green;
-                    width: 100%;
-                    height: 45px;
-                    font-size: 1.3em;
-                    font-weight: 700;
-                    letter-spacing: 3px;
-                    transform: translateX(-500px);
-                    list-style: none;
-                }
                 li {
-                    color: #2c8560dd;
-                    font-weight: 600;
-                    list-style: inside decimal-leading-zero;
-                    font-size: 2.5em;
+                    @include size(100%, auto);
+                    @include font("poppins", calc(2em + 1vw), 700);
                     letter-spacing: 3px;
-                    span {
-                        color: #2c8560dd;
-                        letter-spacing: 1px;
-                        font-size: 15px;
-                        border: none;
-                        opacity: 0;
-                    }
-                    &:hover span {
-                        color: #2c8560dd;
-                        opacity: 1;
-                        transition: 0.5s;
-                    }
-                    &:not(:hover) span {
-                        transition: 0.7s;
-                    }
+                    list-style: inside decimal-leading-zero;
+                }
+                li:nth-child(1) {
+                    @include font(null, calc(0.5em + 1vw), null);
+                    list-style: none;
+                    transform: translateX(-500px);
                 }
             }
         }
         div:nth-child(2) {
-            width: 40%;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include size(40%, auto);
+            @include display(flex, column, center, center);
             figure {
-                width: 300px;
-                height: 380px;
-                position: relative;
-                overflow: hidden;
-                border-radius: 5px;
+                @include size(300px, 380px);
                 img {
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
+                    @include size(100%, 100%);
+                    border-radius: 3px;
                 }
             }
         }
@@ -377,47 +284,26 @@ aside {
 }
 
 .step2 {
-    //buscar projetos
-    width: 100vw;
-    min-height: 100vh;
-    background: $green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
+    @include size(100vw, 100vh);
     overflow: hidden;
     .container {
-        width: 70%;
-        height: 100%;
-        display: flex;
+        @include size(100vw, 100%);
+        @include color($green, #fff, null);
+        @include display(flex, row, center, center);
         div {
-            width: 80%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            @include size(80%, 100%);
+            @include color($green, #fff, null);
+            @include display(flex, column, center, flex-start);
             transition: 0.5s;
             span {
-                width: 100%;
-                display: block;
-                font-size: clamp(1.3rem, 1.5rem, 1.7rem);
-                font-family: $poppins;
-                color: #fff;
-                line-height: 35px;
-                letter-spacing: 1px;
-                font-weight: 600;
+                @include size(100%, auto);
+                @include font("poppins", calc(0.8em + 1vw), 600);
                 margin-bottom: 10px;
             }
             ul {
-                font-family: $poppins;
-                line-height: 40px;
                 li {
-                    color: #fff;
-                    font-weight: 600;
+                    @include font("poppins", calc(0.9em + 1vw), 600);
                     list-style: inside decimal-leading-zero;
-                    font-size: 1.5em;
-                    letter-spacing: 3px;
                     a {
                         color: #fff;
                         padding-left: 5px;
@@ -429,76 +315,51 @@ aside {
 }
 
 .step3 {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include size(100vw, 100vh);
+    @include display(flex, row, center, center);
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/pexels-photo-2330137.webp);
-    // filter: brightness(50%);
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
-    font-family: $baloo;
     overflow: hidden;
     .container {
-        width: 100vw;
-        height: 100%;
-        // background-color: rgba(0, 0, 0, 0.6);
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 0% 15%;
+        @include size(80vw, 100%);
+        @include display(flex, row, flex-start, center);
         div {
-            width: 350px;
-            height: auto;
+            @include size(350px, auto);
+            color: #fff;
             h1 {
-                font-size: calc(1em + 1vw);
-                color: #fff;
-                font-weight: 100;
+                @include font("baloo 2", calc(1.1em + 1vw), 100);
             }
             p {
-                font-size: calc(0.5em + 1vw);
-                color: #fff;
+                @include font("baloo 2", calc(0.7em + 1vw), 100);
                 a {
                     color: #fff;
                 }
             }
             .form {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                @include size(100%, 100%);
+                @include display(flex, column, center, center);
                 fieldset {
                     border: none;
                     position: relative;
                 }
                 legend {
-                    font-size: 15px;
+                    @include font("baloo 2", 15px, 100);
                     visibility: hidden;
-                    position: relative;
-                    top: 20px;
-                    left: 17px;
-                    color: #fff;
-                    font-family: $baloo;
                     span {
-                        color: $red;
+                        color: $invalid;
                     }
                 }
                 input {
-                    width: 100%;
-                    height: 35px;
-                    margin: 5px auto;
+                    @include size(100%, 35px);
+                    @include color(rgba(255, 255, 255, 0.7), #000, null);
+                    margin: 7px auto;
                     outline: none;
-                    border: 1px rgba(0, 0, 0, 0.2) solid;
-                    border-radius: 3px;
                     padding-left: 10px;
-                    background-color: rgba(255, 255, 255, 0.7);
                     &::placeholder {
-                        font-family: $baloo;
-                        font-size: 1rem;
+                        @include font("baloo 2", 0.9rem, null);
                         color: #000;
                     }
                     &:focus {
@@ -510,90 +371,58 @@ aside {
                         transition: 0.4s;
                     }
                     &:focus~legend {
-                        color: #fff;
                         visibility: visible;
-                        top: 0px;
-                        left: 5px;
                         transition: 0.5s;
                     }
                     &:focus::placeholder {
                         visibility: hidden;
-                        transition: 0.1s;
                     }
                     &:valid {
-                        border-bottom: 1px solid rgba(0, 255, 0, 0.5);
-                        box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
+                        box-shadow: 0px 3px 3px $valid;
                     }
                     &:valid~legend {
-                        color: rgba(0, 255, 0, 0.9);
+                        color: $valid;
                         visibility: visible;
-                        top: 0px;
-                        left: 5px;
                         transition: 0.5s;
                         span {
-                            color: rgba(0, 255, 0, 0.9);
+                            color: $valid;
                         }
                     }
-                    &:focus:valid {
-                        box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
-                    }
                     &:not(:placeholder-shown):invalid {
-                        border-bottom: 1px solid rgba(255, 0, 0, 0.5);
-                        box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
-                    }
-                    &:focus:valid~legend {
-                        color: rgba(0, 255, 0, 0.7);
+                        box-shadow: 0px 3px 5px $invalid;
                     }
                     &:not(:placeholder-shown):invalid~legend {
-                        color: rgba(255, 0, 0, 0.9);
+                        color: $invalid;
                         visibility: visible;
-                        top: 0px;
-                        left: 5px;
                         transition: 0.5s;
-                    }
-                    &:focus:not(:placeholder-shown):invalid {
-                        box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
-                    }
-                    &:focus:not(:placeholder-shown):invalid~legend {
-                        color: rgba(255, 0, 0, 0.9);
                     }
                 }
                 textarea {
-                    width: 100%;
-                    height: 100px;
-                    margin: 25px auto 0px;
+                    @include size(100%, 100px);
+                    @include color(rgba(255, 255, 255, 0.7), null, null);
+                    @include font("baloo 2", 0.9rem, null);
+                    margin: 5px auto 0px;
                     outline: none;
-                    border: 1px rgba(255, 255, 255, 0.7) solid;
-                    border-radius: 3px;
-                    padding-left: 10px;
                     padding-top: 5px;
-                    font-size: 1rem;
-                    font-family: $baloo;
-                    background-color: rgba(255, 255, 255, 0.7);
+                    padding-left: 10px;
                     resize: none;
                     &::placeholder {
-                        font-family: $baloo;
-                        font-size: 1rem;
+                        @include font("baloo 2", 1rem, null);
                         color: #000;
                     }
                     &:focus {
                         outline: none;
-                        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-                        border: none;
-                        transition: 0.4s;
                     }
                     &:not(:focus) {
                         transition: 0.4s;
                     }
                 }
                 input[type="submit"] {
-                    width: 100%;
-                    background-color: $green;
-                    color: #fff;
-                    border: none;
-                    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
-                    font-family: $baloo;
-                    font-size: 1.2rem;
+                    @include size(100%, 30px);
+                    @include color($green, #fff, none);
+                    @include font("baloo 2", 1.1em, 100);
+                    letter-spacing: 1px;
+                    box-shadow: none;
                 }
             }
         }
@@ -601,732 +430,162 @@ aside {
 }
 
 footer {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font: $baloo;
-    background-color: #2c8560;
-    padding: 35px 10%;
+    @include size(100vw, auto);
+    min-height: 80px;
+    @include display(flex, row, space-between, center);
+    @include color($green, #fff, null);
+    padding: 0px 30px;
+    flex-wrap: wrap;
     overflow: hidden;
-    div:nth-child(1) {
-        width: 50vw;
-        height: auto;
-        color: #fff;
-        font-family: $poppins;
-        font-weight: 600;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        p {
-            font-size: 1.1rem;
-            font-family: $poppins;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-align: left;
-        }
-    }
-    div:nth-child(2) {
-        width: 40vw;
-        height: auto;
-        color: #fff;
-        font-family: $poppins;
-        font-weight: 600;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex-direction: column;
-        overflow: hidden;
-        p {
-            font-size: 1.1rem;
-            font-family: $poppins;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-align: right;
-        }
-    }
-}
-
-// Página next
-.next {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     div {
-        width: 70vw;
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #2c8560;
-        font-family: Poppins;
-        border-radius: 50px;
-        color: #fff;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    .step2 {
-        transition: 0.5s;
-        .container {
-            div {
-                width: 90%;
-                transition: 0.5s;
-                span {
-                    font-size: clamp(1.2rem, 1.4rem, 1.6rem);
-                    transition: 0.5s;
-                }
-            }
+        @include size(auto, auto);
+        p {
+            @include font("poppins", 1rem, 600);
+            letter-spacing: 1px;
         }
     }
 }
 
+.next {
+    @include size(100vw, 100vh);
+    @include display(flex, row, center, center);
+    div {
+        @include size(80%, 50vh);
+        @include display(flex, column, center, center);
+        @include color(#2c8560, #fff, null);
+        @include font("poppins", calc(.5em + 1vw), 100);
+        border-radius: 3px;
+    }
+}
+
+// (Somente) Mostra o menu hamburguer...
 @media only screen and (max-width: 768px) {
     header {
-        transition: 0.5s;
+        padding: 0px 25px;
         overflow: visible;
         .hamburguer {
-            // Ícone Hamburguer
+            @include position(absolute, null, 25px, null, null);
             opacity: 1;
-            position: absolute;
-            left: 87%;
+            color: #fff;
             cursor: pointer;
             transition: 0.5s;
             b:nth-child(1) {
                 font-size: 65px;
-                color: #fff;
                 display: flex;
             }
             b:nth-child(2) {
-                font-size: 35px;
-                color: #fff;
+                font-size: 45px;
                 display: none;
-                padding: 5px 0px 0px 6px;
             }
         }
         ul {
-            width: auto;
-            height: auto;
-            margin-top: 150px;
-            margin-right: 0px;
-            position: relative;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            @include size(100vw, auto);
+            @include display(flex, column, center, flex-end);
+            @include position(absolute, 60px, null, null, null);
+            margin-left: -25px;
+            padding: 5px;
             row-gap: 10px;
-            z-index: 1;
             display: none;
             transition: 0.5s;
             li:nth-child(1) {
-                //como funciona?
-                width: 100px;
-                position: relative;
-                margin: 3px;
-                padding: 0px;
                 display: none;
-                a {
-                    color: #fff;
-                }
             }
             li:nth-child(2) {
-                // login
-                width: 100px;
-                position: relative;
-                margin: 5px;
-                padding: 0px;
+                @include size(100px, auto);
                 border: none;
+                border-radius: 0px;
                 border-bottom: 1px solid #fff;
-                a {
-                    color: #fff;
-                }
-                &:hover {
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 1px solid #fff;
-                    a {
-                        color: #fff;
-                        font-weight: 500;
-                    }
-                }
-                &:not(:hover) {
-                    transition: 0.5s;
-                }
+                background-color: rgba(0, 0, 0, 0.8);
             }
             li:nth-child(3) {
-                // Cadastrar
-                width: 100px;
-                position: relative;
-                margin: 5px;
-                padding: 0px;
-                background-color: transparent;
-                border: none;
+                @include size(100px, auto);
+                @include color(transparent, #fff, none);
+                border-radius: 0px;
                 border-bottom: 1px solid #fff;
+                background-color: rgba(0, 0, 0, 0.8);
                 a {
                     color: #fff;
-                    font-weight: 600;
-                }
-                &:hover {
-                    background: transparent;
-                    border: none;
-                    border-bottom: 1px solid #fff;
-                    a {
-                        color: #fff;
-                    }
-                }
-                &:not(:hover) {
-                    transition: 0.5s;
                 }
             }
         }
     }
-    .step1 {
-        .container {
-            div {
-                width: 95%;
-                p {
-                    transition: 0.5s;
-                    span {
-                        font-size: clamp(1.1rem, 1.3rem, 1.7rem);
-                    }
-                    span:nth-child(4) {
-                        font-size: clamp(2rem, 8.5vw, 3.5rem);
-                    }
-                }
-            }
-        }
-    }
-    aside {
-        .container {
-            div:nth-child(1) {
-                ol {
-                    li:nth-child(1) {
-                        list-style: none;
-                    }
-                }
-            }
-            div:nth-child(2) {
-                transition: 0.5s;
-                figure {
-                    transition: 0.5s;
-                    img {
-                        transition: 0.5s;
-                    }
-                }
-            }
-        }
-    }
-    .step2 {
-        .container {
-            div {
-                width: 80%;
-                height: 100%;
-                span {
-                    font-size: clamp(1.3rem, 1.5rem, 1.7rem);
-                }
-            }
-        }
-    }
-    footer {
-        height: auto;
-        div:nth-child(1) {
-            p {
-                font-size: 1rem;
-                font-family: $poppins;
-                font-weight: 600;
-                letter-spacing: 1px;
-                text-align: left;
-            }
-        }
-        div:nth-child(2) {
-            p {
-                font-size: 1rem;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 720px) {
-    .step1 {
-        .container {
-            div {
-                width: 95%;
-                p {
-                    transition: 0.5s;
-                    span {
-                        font-size: clamp(1.1rem, 1.2rem, 1.3rem);
-                        transition: 0.5s;
-                    }
-                    span:nth-child(4) {
-                        font-size: clamp(1.5rem, 8vw, 3rem);
-                    }
-                }
-            }
-        }
-    }
-    aside {
-        .container {
-            div:nth-child(1) {
-                width: 40%;
-                ol {
-                    span {
-                        font-size: 1.1em;
-                    }
-                    li:nth-child(1) {
-                        color: $green;
-                        width: 95%;
-                        height: 45px;
-                        font-size: 1em;
-                        font-weight: 700;
-                        letter-spacing: 3px;
-                        transform: translateX(-500px);
-                        list-style: none;
-                    }
-                    li {
-                        font-size: 2em;
-                        letter-spacing: 1px;
-                        span {
-                            font-size: 15px;
-                        }
-                        &:hover span {
-                            color: #2c8560dd;
-                            opacity: 1;
-                            transition: 0.5s;
-                        }
-                        &:not(:hover) span {
-                            transition: 0.7s;
-                        }
-                    }
-                }
-            }
-            div:nth-child(2) {
-                width: 30%;
-                transition: 0.3s;
-                // display: none;
-                figure {
-                    width: 100%;
-                    height: 380px;
-                    transition: 0.3s;
-                    img {
-                        width: 150%;
-                        height: 100%;
-                        position: absolute;
-                        left: -50px;
-                        transition: 0.9s;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 605px) {
-    .step1 {
-        .container {
-            div {
-                width: 95%;
-                p {
-                    transition: 0.5s;
-                    span {
-                        font-size: clamp(1rem, 1.1rem, 1.2rem);
-                        transition: 0.5s;
-                    }
-                    span:nth-child(4) {
-                        font-size: clamp(1.3rem, 7.5vw, 2.5rem);
-                    }
-                }
-            }
-        }
-    }
-    aside {
-        transition: 0.5s;
-        .container {
-            div:nth-child(1) {
-                width: 70%;
-                align-items: flex-start;
-                // transition: 0.5s;
-                ul {
-                    span {
-                        font-size: 1.1em;
-                    }
-                    li:nth-child(1) {
-                        color: $green;
-                        width: 100%;
-                        height: 45px;
-                        font-size: 1em;
-                        font-weight: 700;
-                        letter-spacing: 3px;
-                        transform: translateX(-500px);
-                        list-style: none;
-                        h4 {
-                            border-bottom: 1px solid #2c856091;
-                        }
-                    }
-                    li {
-                        font-size: 2.1em;
-                        letter-spacing: 1px;
-                        span {
-                            font-size: 15px;
-                        }
-                        &:hover span {
-                            color: #2c8560dd;
-                            opacity: 1;
-                            transition: 0.5s;
-                        }
-                        &:not(:hover) span {
-                            transition: 0.7s;
-                        }
-                    }
-                }
-            }
-            div:nth-child(2) {
-                display: none;
-                figure {
-                    img {
-                        transition: 0.9s;
-                    }
-                }
-            }
-        }
-    }
-    // Página next
-    .next {
-        div {
-            width: 90vw;
-            height: 40vh;
-            h1 {
-                font-size: 21px;
-            }
-            h3 {
-                font-size: 17px;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 545px) {
-    .step1 {
-        .container {
-            div {
-                width: 95%;
-                p {
-                    transition: 0.5s;
-                    span {
-                        font-size: clamp(0.8rem, 0.9rem, 1rem);
-                        transition: 0.5s;
-                    }
-                    span:nth-child(4) {
-                        font-size: clamp(1.3rem, 2.2rem, 2.3rem);
-                    }
-                }
-            }
-        }
-    }
-    .step2 {
-        transition: 0.5s;
-        .container {
-            width: 70%;
-            height: 100%;
-            display: flex;
-            div {
-                transition: 0.5s;
-                span {
-                    font-size: clamp(1.1rem, 1.2rem, 1.3rem);
-                }
-                ul {
-                    font-family: $poppins;
-                    line-height: 40px;
-                    li {
-                        color: #fff;
-                        font-weight: 600;
-                        list-style: inside decimal-leading-zero;
-                        font-size: 1.2em;
-                        letter-spacing: 0px;
-                        a {
-                            color: #fff;
-                            padding-left: 5px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 425px) {
-    header {
-        width: 100vw;
-        padding: 0px 20px 0px 0px;
-        justify-content: flex-end;
-        div {
-            position: absolute;
-            left: 5%;
-            b {
-                font-size: 23px;
-            }
-        }
+    .header {
         .hamburguer {
-            // Ícone Hamburguer
-            opacity: 1;
-            position: absolute;
-            left: 85%;
-            cursor: pointer;
-            transition: 0.5s;
-            b:nth-child(1) {
-                font-size: 65px;
-                color: #fff;
-                display: flex;
-            }
-            b:nth-child(2) {
-                font-size: 35px;
-                padding-left: 10px;
-                color: #fff;
-                display: none;
-            }
+            color: $green;
         }
         ul {
-            width: auto;
-            height: auto;
-            margin-top: 150px;
-            margin-right: 0px;
-            position: relative;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            row-gap: 10px;
-            z-index: 1;
-            display: none;
-            transition: 0.5s;
-            li:nth-child(1) {
-                //como funciona?
-                width: 100px;
-                position: relative;
-                margin: 3px;
-                padding: 0px;
-                display: none;
-                a {
-                    color: #fff;
-                }
-            }
+            background-color: rgba(255, 255, 255, .7);
             li:nth-child(2) {
-                // login
-                width: 100px;
-                position: relative;
-                margin: 5px;
-                padding: 0px;
+                background-color: #fff;
                 border: none;
-                border-bottom: 1px solid #fff;
                 a {
-                    color: #fff;
-                }
-                &:hover {
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 1px solid #fff;
-                    a {
-                        color: #fff;
-                        font-weight: 500;
-                    }
-                }
-                &:not(:hover) {
-                    transition: 0.5s;
+                    color: $green;
                 }
             }
             li:nth-child(3) {
-                // Cadastrar
-                width: 100px;
-                position: relative;
-                margin: 5px;
-                padding: 0px;
-                background-color: transparent;
-                border: none;
-                border-bottom: 1px solid #fff;
+                background-color: $green;
+                border: 1px solid $green;
                 a {
                     color: #fff;
-                    font-weight: 600;
-                }
-                &:hover {
-                    background: transparent;
-                    border: none;
-                    border-bottom: 1px solid #fff;
-                    a {
-                        color: #fff;
-                    }
-                }
-                &:not(:hover) {
-                    transition: 0.5s;
+                    font-weight: 700;
                 }
             }
         }
     }
-    .step1 {
-        transition: 0.5s;
-        .container {
-            padding: 5%;
-            div {
-                width: 90%;
-                p {
-                    transition: 0.5s;
-                    span {
-                        font-size: clamp(0.7rem, 0.85rem, 0.9rem);
-                        line-height: 50px;
-                        letter-spacing: 0px;
-                        font-weight: 600;
-                    }
-                    span:nth-child(4) {
-                        font-size: clamp(1rem, 2rem, 3rem);
-                        letter-spacing: 3px;
-                    }
-                }
-            }
-        }
-    }
+}
+
+// (Somente) Remove a foto...
+@media only screen and (max-width: 605px) {
     aside {
         .container {
-            justify-content: space-evenly;
             div:nth-child(1) {
-                width: 90%;
-                height: auto;
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: center;
-                ul {
-                    span {
-                        font-size: 1.3em;
-                    }
-                    li:nth-child(1) {
-                        border-bottom: 1px solid #2c856091;
-                        h4 {
-                            border-bottom: none;
-                        }
-                    }
+                @include size(80%, auto);
+                @include display(flex, column, center, flex-start);
+                ol {
                     li {
-                        border: none;
-                        font-size: 2em;
-                        span {
-                            font-size: 15px;
-                        }
-                        &:hover span {
-                            transition: 0.5s;
-                        }
-                        &:not(:hover) span {
-                            transition: 0.7s;
-                        }
+                        @include size(100%, auto);
                     }
                 }
             }
             div:nth-child(2) {
                 display: none;
-                figure {
-                    img {
-                        position: absolute;
-                    }
-                }
             }
         }
     }
-    .step2 {
-        transition: 0.5s;
+}
+
+// (Somente) Diminui tamanho step1...
+@media only screen and (max-width: 465px) {
+    .step1 {
         .container {
-            width: 90%;
-            div {
-                width: 100%;
+            p {
                 span {
-                    font-size: clamp(0.7rem, 1.05rem, 1.2rem);
+                    @include font("poppins", calc(0.6em + 1vw), 600);
+                    letter-spacing: 0px;
+                    transition: 0.5s;
+                }
+                span:nth-child(4) {
+                    font-size: calc(1.9em + 1vw);
                     letter-spacing: 1px;
                 }
-                ul {
-                    li {
-                        font-size: 1.1em;
-                        a {
-                            padding-left: 5px;
-                        }
-                    }
-                }
             }
         }
     }
+}
+
+// Diminui Formulário e aumenta página .next...
+@media only screen and (max-width: 425px) {
     .step3 {
         .container {
-            justify-content: center;
-            padding-left: 10%;
             div {
-                width: 270px;
-                h1 {
-                    font-size: calc(1.1rem + 1vw);
-                }
-                p {
-                    font-size: calc(0.7em + 1vw);
-                    a {
-                        color: #fff;
-                    }
-                    i {
-                        font-size: 25px;
-                    }
-                }
-            }
-        }
-    }
-    footer {
-        width: 100vw;
-        height: auto;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex-direction: column;
-        font: $baloo;
-        background-color: #2c8560;
-        padding: 10px 5vw;
-        div:nth-child(1) {
-            width: 90vw;
-            height: auto;
-            color: #fff;
-            font-family: $poppins;
-            font-weight: 600;
-            display: flex;
-            flex-direction: column;
-            p {
-                font-size: 0.8rem;
-                font-family: $poppins;
-                font-weight: 600;
-                letter-spacing: 1px;
-                text-align: left;
-            }
-        }
-        div:nth-child(2) {
-            width: 90vw;
-            height: auto;
-            color: #fff;
-            font-family: $poppins;
-            font-weight: 600;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            p {
-                font-size: 0.8rem;
-                font-family: $poppins;
-                font-weight: 600;
-                letter-spacing: 1px;
-                text-align: right;
+                width: 100%;
             }
         }
     }
     // Página next
     .next {
         div {
-            width: 95vw;
-            height: 30vh;
-            h1 {
-                font-size: 17px;
-            }
-            h3 {
-                font-size: 15px;
-            }
+            @include size(100%, 50vh);
         }
     }
 }
