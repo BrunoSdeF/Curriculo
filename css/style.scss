@@ -333,7 +333,7 @@ aside {
                 @include font("baloo 2", calc(1.1em + 1vw), 100);
             }
             p {
-                @include font("baloo 2", calc(0.7em + 1vw), 100);
+                @include font("baloo 2", calc(0.9em + 1vw), 100);
                 a {
                     color: #fff;
                 }
@@ -431,10 +431,10 @@ aside {
 
 footer {
     @include size(100vw, auto);
-    min-height: 80px;
+    min-height: 100px;
     @include display(flex, row, space-between, center);
     @include color($green, #fff, null);
-    padding: 0px 30px;
+    padding: 10px 30px;
     flex-wrap: wrap;
     overflow: hidden;
     div {

@@ -551,7 +551,7 @@ aside .container div:nth-child(2) figure img {
 
 .step3 .container div p {
   font-family: "baloo 2";
-  font-size: calc(0.7em + 1vw);
+  font-size: calc(0.9em + 1vw);
   font-weight: 100;
 }
 
@@ -753,7 +753,7 @@ aside .container div:nth-child(2) figure img {
 footer {
   width: 100vw;
   height: auto;
-  min-height: 80px;
+  min-height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -769,7 +769,7 @@ footer {
           flex-direction: row;
   background-color: #2c8560;
   color: #fff;
-  padding: 0px 30px;
+  padding: 10px 30px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow: hidden;
