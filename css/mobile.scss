@@ -1,4 +1,37 @@
-@import 'style.scss';
+// @import 'style.scss';
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin display($display, $direction, $content, $align) {
+    display: $display;
+    align-items: $align;
+    justify-content: $content;
+    flex-direction: $direction;
+}
+
+@mixin color($bgcolor, $color, $border) {
+    background-color: $bgcolor;
+    color: $color;
+    border: $border;
+}
+
+@mixin font($family, $size, $weight) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+$green: #2c8560;
 // (Somente) Mostra o menu hamburguer...
 @media only screen and (max-width: 768px) {
     header {
