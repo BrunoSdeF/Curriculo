@@ -828,4 +828,152 @@ footer div p {
   font-weight: 100;
   border-radius: 3px;
 }
-/*# sourceMappingURL=style.css.map */
+
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 0px 25px;
+    overflow: visible;
+  }
+  header .hamburguer {
+    position: absolute;
+    right: 25px;
+    opacity: 1;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  header .hamburguer b:nth-child(1) {
+    font-size: 65px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .hamburguer b:nth-child(2) {
+    font-size: 45px;
+    display: none;
+  }
+  header ul {
+    width: 100vw;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 60px;
+    margin-left: -25px;
+    padding: 5px;
+    row-gap: 10px;
+    display: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  header ul li:nth-child(1) {
+    display: none;
+  }
+  header ul li:nth-child(2) {
+    width: 100px;
+    height: auto;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  header ul li:nth-child(3) {
+    width: 100px;
+    height: auto;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  header ul li:nth-child(3) a {
+    color: #fff;
+  }
+  .header .hamburguer {
+    color: #2c8560;
+  }
+  .header ul {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .header ul li:nth-child(2) {
+    background-color: #fff;
+    border: none;
+  }
+  .header ul li:nth-child(2) a {
+    color: #2c8560;
+  }
+  .header ul li:nth-child(3) {
+    background-color: #2c8560;
+    border: 1px solid #2c8560;
+  }
+  .header ul li:nth-child(3) a {
+    color: #fff;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (max-width: 605px) {
+  aside .container div:nth-child(1) {
+    width: 80%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  aside .container div:nth-child(1) ol li {
+    width: 100%;
+    height: auto;
+  }
+  aside .container div:nth-child(2) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .step1 .container p span {
+    font-family: "poppins";
+    font-size: calc(0.6em + 1vw);
+    font-weight: 600;
+    letter-spacing: 0px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .step1 .container p span:nth-child(4) {
+    font-size: calc(1.9em + 1vw);
+    letter-spacing: 1px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .step3 .container div {
+    width: 100%;
+  }
+  .next div {
+    width: 100%;
+    height: 50vh;
+  }
+}
+/*# sourceMappingURL=mobile.css.map */
