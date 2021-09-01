@@ -1,7 +1,6 @@
-// window.onload = function() {
-//     // window.scrollY = 0;
-//     window.scroll(0, 0, 'smooth', behavior = 'smooth');
-// };
+window.onload = function() {
+    window.scroll(0, 0, 'smooth', behavior = 'smooth');
+};
 
 window.setTimeout(function() {
     // Menu scroll
